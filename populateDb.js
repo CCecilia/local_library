@@ -18,7 +18,8 @@ var BookInstance = require('./models/bookinstance')
 
 var mongoose = require('mongoose');
 // var mongoDB = userArgs[0];
-mongoose.connect('mongodb://localhost:27017/local_library');
+// mongoose.connect('mongodb://localhost:27017/local_library');
+mongoose.connect('mongodb://doughboy:march@ds231228.mlab.com:31228/local_library');
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));

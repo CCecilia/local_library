@@ -20,8 +20,9 @@ app.use(helmet());
 // Set up mongoose connection
 const mongoose = require('mongoose');
 //Set up default mongoose connection
-const dev_db_url = 'mongodb://localhost:27017/local_library'
-mongoose.connect(dev_db_url);
+// const mongoDB = 'mongodb://localhost:27017/local_library'
+var mongoDB = process.env.MONGODB_URI || 'mongodb://doughboy:march@ds231228.mlab.com:31228/local_library';
+mongoose.connect(mongoDB);
 // Get Mongoose to use the global promise library
 mongoose.Promise = global.Promise;
 //Get the default connection
